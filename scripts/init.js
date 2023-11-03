@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnGet1 = document.getElementById('btnGet1');
     const inputGet1Id = document.getElementById('inputGet1Id');
     const results = document.getElementById('results');
+    const alertError = document.getElementById('alert-error');
 
 
     function getUser() {
@@ -19,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (selectedId === "" || selectedId === undefined || selectedId === null) {
 
+                results.innerHTML = ""
+
                 data.forEach(user => {
                 results.innerHTML += `
                 <p>
@@ -29,12 +32,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 `
                 });
             } else {
+                results.innerHTML = ""
                 console.log(selectedId);
+                let specificUser = data.find(user => user.id === selectedId);
+                results.innerHTML += `
+                <p>
+                ID: ${specificUser.id}<br>
+                NAME: ${specificUser.name}<br>
+                LASTNAME: ${specificUser.lastname}<br>
+                </p>
+                `
             }
-
+            if (parseInt(selectedId) > data.length) {
+                alertError.style.display = 'block';
+            }
         })
-
-
     }
 
     btnGet1.addEventListener('click', getUser);
