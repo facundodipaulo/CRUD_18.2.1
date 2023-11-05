@@ -79,20 +79,13 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(URL + `/${modalId}`)
             .then(response => response.json())
             .then(data => {
-                if (parseInt(modalId) <= data.length) {
 
                 oldModalName = data.name;
                 oldModalLastName = data.lastname;
                 modalName.value = oldModalName;
                 modalLastName.value = oldModalLastName;
                 myModal.show();
-                } else { 
-                console.log("No se puede modificar: ID fuera de rango");
-                alertError.classList.add('show');
-                setTimeout(function() {
-                    alertError.classList.remove('show');
-                }, 3000);
-            }
+                
             })
             .catch(error => {
                 console.error('Error fetching user data:', error);
