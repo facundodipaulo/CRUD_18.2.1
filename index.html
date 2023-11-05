@@ -30,11 +30,13 @@
                     </div>
                     <div class="col-md-6">
                         <div class="border p-3 my-3 position-relative" id="post-box">
+                            <form id="addForm">
                             <h6>Ingresar nuevo registro</h6>
                             <input type="text" id="inputPostNombre" class="form-control my-1" placeholder="Nombre">
                             <input type="text" id="inputPostApellido" class="form-control my-1" placeholder="Apellido">
                             <button id="btnPost" class="btn btn-success position-absolute bottom-0 mb-3" disabled>
                                 Agregar</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -75,10 +77,12 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <label for="inputPutNombre">Nombre:</label>
-                    <input type="text" id="inputPutNombre" class="form-control my-1">
-                    <label for="inputPutApellido">Apellido:</label>
-                    <input type="text" id="inputPutApellido" class="form-control my-1">
+                    <form id="modalForm">
+                        <label for="inputPutNombre">Nombre:</label>
+                        <input type="text" id="inputPutNombre" class="form-control my-1">
+                        <label for="inputPutApellido">Apellido:</label>
+                        <input type="text" id="inputPutApellido" class="form-control my-1">
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -88,6 +92,7 @@
         </div>
     </div>
     <script src="scripts/bootstrap.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
